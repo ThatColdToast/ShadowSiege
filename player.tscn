@@ -1,20 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3fvv210i4bmu"]
+[gd_scene load_steps=5 format=3 uid="uid://c3fvv210i4bmu"]
 
 [ext_resource type="Script" path="res://player_controller.gd" id="1_ihsva"]
-[ext_resource type="Texture2D" uid="uid://c16ty6srkny1m" path="res://icon.svg" id="2_mi4yy"]
+[ext_resource type="Texture2D" uid="uid://5jekdn53bekq" path="res://mineboi/mineboi-right.png" id="2_ud0ns"]
+[ext_resource type="Texture2D" uid="uid://cceid18brmfjx" path="res://mineboi/mineboi-left.png" id="3_qfm06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04h5g"]
-size = Vector2(128, 128)
+size = Vector2(14, 26)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ihsva")
+RIGHT_TEXTURE = ExtResource("2_ud0ns")
+LEFT_TEXTURE = ExtResource("3_qfm06")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.8147e-06, -3.8147e-06)
+position = Vector2(0, 4)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_04h5g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(150, 150)
+position_smoothing_speed = 2.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_mi4yy")
+texture_filter = 1
+position = Vector2(0, 5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ud0ns")
